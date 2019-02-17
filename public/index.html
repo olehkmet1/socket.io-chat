@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Socket.IO chat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font: 13px Helvetica, Arial;
+        }
+
+        form {
+            padding: 3px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .wrapper {
+            position: relative;
+            height: 90vh;
+        }
+
+        #m {
+            border: 0;
+            padding: 10px;
+            width: 90%;
+            margin-right: .5%;
+            border: 2px solid grey;
+        }
+
+        form button {
+            width: 9%;
+            background: blueviolet;
+            border: none;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #messages li {
+            padding: 5px 10px;
+        }
+
+        #messages li:nth-child(odd) {
+            background: #eee;
+        }
+
+        .notifications {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            color: grey;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <ul id="messages"></ul>
+        <div class="notifications">
+            <span id=typing></span>
+        </div>
+        <form action="">
+            <input class="form-control" id="m" autocomplete="off" />
+            <button class="btn btn-primary">Send</button>
+        </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="./js/main.js">
+    </script>
+</body>
+
+</html>
